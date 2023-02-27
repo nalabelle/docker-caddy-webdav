@@ -45,12 +45,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,suffix=-{{date 'YYYYMMDDHHmmss'}},event=branch
-            type=ref,suffix=-{{date 'YYYYMMDDHHmmss'}},event=tag
-            type=ref,suffix=-{{date 'YYYYMMDDHHmmss'}},event=pr
-            type=ref,event=branch
-            type=ref,event=tag
-            type=ref,event=pr
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value={{branch}}-{{date 'X'}},enable={{is_default_branch}}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
