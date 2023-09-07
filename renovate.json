@@ -1,12 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:best-practices",
-    "helpers:pinGitHubActionDigests",
-    ":automergeMinor",
-    ":automergeDigest",
-    ":rebaseStalePrs",
-    "docker:enableMajor",
-    "schedule:automergeDaily"
+    "github>nalabelle/renovate-config"
   ]
 }
