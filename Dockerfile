@@ -1,4 +1,4 @@
-FROM caddy:2.7.5-builder@sha256:5b9c67db8969d2d07fbbea52156ed4a9d59c6b20452e5f230c230a686b60c426 AS builder
+FROM caddy:2.7.5-builder@sha256:801ec8f85e0f5ec8569a071d8e9a1e307c7f58d12e2fe3c245e6f3f25353ebda AS builder
 
 RUN xcaddy build \
   --with github.com/mholt/caddy-webdav
